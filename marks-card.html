@@ -1,0 +1,240 @@
+<html>
+<head>
+    <title>marks-card</title>
+    
+    <style type="text/css">
+       
+    body
+        {
+            background-color:  #404040;
+            
+        }
+        
+     #base
+        {
+background-color: #595959;
+            height: 400px;
+            width: 450px;
+            margin: auto;
+        }
+     
+        legend
+        {
+            color:#992600;
+            text-shadow: 3px 3px 3px grey;
+        text-align: right;
+            padding: 10px;
+            font-family: calibri;
+            font-weight: bolder;
+            font-size: 30px;
+        }
+        
+        label
+        {
+            color: orange;
+            font-size: 20px;
+            font-weight: bold;
+            
+            
+        }
+        input[type="text"]
+        {
+           
+           font-size: 15px;
+            border-radius: 10px;
+            outline: none;
+            background-color:  white;
+            width: 60px;
+            color: black;
+            font-family: cursive;
+            font-weight: bold;
+            box-shadow: 4px 4px 4px gray;
+            height: 25px;
+            text-align: center;
+        }
+         ::placeholder
+        {
+            font-family: calibri;
+            font-size: 15px;
+            color: lightgray;
+        }
+        
+        input[type="button"]
+         {
+             border-radius: 30px;
+             margin-left: 10px;
+             background-color: #e68a00;
+             color: white;
+             
+        }
+        
+          input[type="button"]:hover
+         {
+             border-radius: 0px;
+             background-color:  #00ffff;
+             color: black;
+             
+        }
+        input[type="reset"]
+        {
+             border-radius: 30px;
+             margin-left: 10px;
+            background-color:  #992600;
+            color: white;
+            
+        }
+        
+         input[type="reset"]:hover
+        {
+             border-radius: 0px;
+            background-color:   #00ff00;
+            color: black;
+            
+        }
+        
+      
+    </style>
+    
+    <script> 
+      
+    var sum;
+        var percent;
+        
+      function  doTotal()
+        {
+              
+        var cm= parseFloat(document.frm.cmarks.value);
+        var jm= parseFloat(document.frm.jmarks.value);
+        var wm= parseFloat(document.frm.wmarks.value);
+           sum= cm+jm+wm;
+            
+            document.frm.total.value = sum;
+        }
+        
+        function doPer()
+        {
+             percent = (sum/300)*100;
+            document.frm.per.value = percent;
+        }
+    
+        function doResult()
+        { if(percent > "33")
+            document.frm.result.value = "PASS";
+         else
+             document.frm.result.value = "FAIL";
+            
+        }
+            
+    
+    
+    
+    </script>
+    
+    
+    
+    </head>
+
+    
+    <body>
+    
+    <div id="base">
+       <fieldset>
+           <legend>Marks-Card</legend>
+        <form name="frm">
+        <table width="100%" >
+            <tr>
+            <td width=100px;><label>C++</label></td>
+                <td ><input type="text" name="cmarks" autofocus maxlength="3" placeholder="marks"></td>     
+            </tr>
+            
+            
+             <tr>
+            <td width=100px;><label>Java</label></td>
+                <td ><input type="text" name="jmarks" maxlength="3" placeholder="marks"></td>     
+            </tr>
+            
+             <tr>
+            <td width=100px;><label>Web-Dev</label></td>
+                <td ><input type="text" name="wmarks"  maxlength="3" placeholder="marks"></td>     
+            </tr>
+            
+            <tr height="50px">
+                <td></td>
+                <td></td>
+            </tr>
+            
+            </table>
+            
+        <fieldset>
+            
+            <table width=100%>
+            <tr colspan="2" align="center">
+                
+                <td colspan="2" align="center">
+                    <input type="button" value="Total" onclick="doTotal();">
+                <input type="button" value="Percentage" onclick="doPer();">
+                <input type="button" value="Result" onclick="doResult();">
+                <input type="reset" value="Reset"></td>
+                
+            </tr>
+                
+             
+            </table>
+            
+            </fieldset>
+            
+             <table width="100%" >
+                   <tr height="50px">
+                <td></td>
+                <td></td>
+            </tr>
+            
+            
+            
+            <tr>
+            <td width=100px;><label style="color:yellow">Total</label></td>
+                <td ><input type="text" name="total" style="  
+            box-shadow: none; 
+            background-color: gainsboro; 
+            border-radius: 0px; 
+            font-family :calibri;
+                    border-radius: 5px;" disabled></td>     
+                 </tr>
+                 <tr>
+            <td width=100px;><label style="color:yellow">Per</label></td>
+                <td ><input type="text" name="per" maxlength="4"  style="box-shadow: none; 
+            background-color: gainsboro; 
+            border-radius: 0px; 
+            font-family :calibri;
+                    border-radius: 5px;" disabled></td> 
+                 </tr>
+            <tr>
+            <td width=100px;><label style="color:yellow">Result</label></td>
+                <td ><input type="text" name="result" style="box-shadow: none; 
+            background-color: gainsboro; 
+            border-radius: 0px; 
+            font-family :calibri;
+                    border-radius: 5px; color: red;" disabled></td>     
+            </tr>
+            
+            
+          
+            </table>
+            
+            
+        
+        
+        </form>
+           
+        
+        </fieldset>
+        
+    
+        
+        
+        </div>
+        
+        
+    </body>
+
+</html>
